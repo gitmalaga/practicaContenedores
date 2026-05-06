@@ -57,9 +57,10 @@ Con
 Creo el fichero Dockerfile en el raíz de mi proyecto y copio los comandos para actualizar e instalar curl.
 
 
+Grabo el fichero y ejecuto en la terminal la creación de la imagen con el comando docker build.
+
 ![9](Capturas/9.png)
 
-Grabo el fichero y ejecuto en la terminal la creación de la imagen con el comando docker build.
 A la imagen le pongo la etiqueta v1
 
 
