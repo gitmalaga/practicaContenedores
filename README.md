@@ -59,14 +59,16 @@ Creo el fichero Dockerfile en el raíz de mi proyecto y copio los comandos para 
 
 Grabo el fichero y ejecuto en la terminal la creación de la imagen con el comando docker build.
 
-![9](Capturas/9.png)
-
 A la imagen le pongo la etiqueta v1
 
+![9](Capturas/9.png)
+
+
+Ejecuto (Crear)  el nuevo contenedor con la nueva imagen creada ( ubuntu:v1) con el comando docker run. Le pongo otro nombre diferente al otro contenedor.
 
 ![10](Capturas/10.png)
 
-Ejecuto (Crear)  el nuevo contenedor con la nueva imagen creada ( ubuntu:v1) con el comando docker run. Le pongo otro nombre diferente al otro contenedor.
+
 
 
 ![11](Capturas/11.png)
