@@ -68,33 +68,25 @@ Ejecuto (Crear)  el nuevo contenedor con la nueva imagen creada ( ubuntu:v1) con
 
 ![10](Capturas/10.png)
 
-
-
-
-![11](Capturas/11.png)
-
-
-
 En Docker aparece el nuevo contenedor
-
-
-![12](Capturas/12.png) 
+![10-1](Capturas/10.png)
 
 ejecuto el contendor con la imagen ubuntu:v1
 
-![13](Capturas/13.png)
+![11](Capturas/11.png)
 
 y compruebo que realmente curl está instalado con curl –version
 
-![14](Capturas/14.png) 
- 
+
+![12](Capturas/12.png) 
 
 ¿Qué comando permite ver las capas de una imagen Docker?
 El comando sería :
 
 		 docker image history ubuntu:v1
 
-![15](Capturas/15.png) 
+![13](Capturas/13.png)
+
 
 
 # #####3:
@@ -106,88 +98,106 @@ OJO!!!!  el volumen está mal. Debe ser var/lib/postgresql  (sin/data). Si no, d
 Busco la imagen  de Postgres.
 Creo el contendor desde comando.
 
-![16](Capturas/16.png)
+![14](Capturas/14.png) 
 
 Usuario:postgres
 Pwd: miadmin
 
-![17Capturas/17.png)
-![18](Capturas/18.png)
+
+![15](Capturas/15.png) 
+
+![16](Capturas/16.png)
+
 
 Paro y borro el contenedor
 Creo el contenedor v2 usando el mismo volumen
 
-![19](Capturas/19.png)
-
-![20](Capturas/20.png)
+![17](Capturas/17.png)
+![18](Capturas/18.png)
 
 Tras borrar el contenedor y crear uno nuevo, los datos siguen estando en el nuevo.
 
 
 # ###### 4
 
-
 Creo el contenedor y lo mapeo al mi puero 8080
 
+![19](Capturas/19.png)
 
-![21](Capturas/21.png)
+![20](Capturas/20.png)
 
-![22](Capturas/22.png)
-
- 
 Pregunta:
 
 ¿Qué ocurre si modificas el archivo index.html en tu máquina?
 
 Como se ve, todo lo que está en mi carpeta Practica ha quedado vinculado al contenedor, por lo que si modifico el fichero index en mi ordenador también se cambiará en el contenedor
 
-![23](Capturas/23.png)
+
+![21](Capturas/21.png)
 
 # ######## 5
 
-
 		Sería: docker volume inspect NombVolumen
 
+
+
 # ######## 6
+Creo mi red
+
+![22](Capturas/22.png)
+
+ Miro la configuración de la red que se ha asignado automáticamente
+ 
+
+
+![23](Capturas/23.png)
+
+
+
+Arranco 2 contendores ubuntu y les instalo para poder hacer ping
 
 
 ![24](Capturas/24.png)
 
 
- Miro la configuración de la red que se ha asignado automáticamente
-
 ![25](Capturas/25.png) 
  
 
-Arranco 2 contendores ubuntu y les instalo para poder hacer ping
-
-
 ![26](Capturas/26.png) 
-![27](Capturas/27.png) 
-![28](Capturas/28.png)
-
 
 Procedo de la misma forma con UbuntuPC2
 
-![29](Capturas/29.png) 
+![27](Capturas/27.png) 
+
+
 Inicio los 2 contenedores
 
 Miro que PC1 tiene la IP 172.18.0.2
-![30](Capturas/30.png)
- 
+
+![28](Capturas/28.png)
+
 y PC 2: 172.18.0.3
 
 Dsde PC1 hago ping a PC2
 
 Entro en el bash de PC1:
 
- 
+
+![29](Capturas/29.png) 
+
 efectivamente hace ping 
 
 
-![31](Capturas/31.png)
+
+
+
 
 # #########  9
 
+Creo el fichero docker-compose y deefino los dos servicios.
+reader dependerá del writer (lo que escriba lo lee) .
+En reader el volumen lleva el atributo ro(radonly).
+en los comandos, writer genera un fihero.txt y reader lo lee
 
-![32](Capturas/32.png) 
+![30](Capturas/30.png)
+ 
