@@ -1,0 +1,17 @@
+services:
+  writer:
+    image: ubuntu:latest
+    volumes:
+      - vcompartido:/app/logs
+    command: sh -c "mkdir -p /app/logs && while true; do date '+%Y-%m-%d %H:%M:%S' >> /app/logs/log.txt; sleep 30; done"
+
+  reader:
+    image: ubuntu:latest
+    depends_on:
+      - writer
+    volumes:
+      - vcompartido:/app/logs:ro
+    command: sh -c "touch /app/logs.log.txt && tail -f /app/logs/log.txt"
+
+volumes:
+  vcompartido:
