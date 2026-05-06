@@ -69,7 +69,7 @@ Ejecuto (Crear)  el nuevo contenedor con la nueva imagen creada ( ubuntu:v1) con
 ![10](Capturas/10.png)
 
 En Docker aparece el nuevo contenedor
-![10-1](Capturas/10.png)
+![10-1](Capturas/10-1.png)
 
 ejecuto el contendor con la imagen ubuntu:v1
 
